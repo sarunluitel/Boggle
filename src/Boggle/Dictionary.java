@@ -5,12 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 
 
-public class Dictionary
+class Dictionary
 {
 
   private String[] Dictionary = new String[178696];
 
-  public Dictionary()
+  Dictionary()
   {
     try
     {
@@ -33,11 +33,7 @@ public class Dictionary
     }
   }
 
-  //QUESTION TO DR.ROMAN
-  // I want to make it recursive. first call I only need word to search.
-  // but subsequent calls will need the start and end points. as parameters
-
-  boolean binarySearch(String wordSearch, int start, int end)
+  private boolean binarySearch(String wordSearch, int start, int end)
   {
     int pivot = (start + end) / 2;
 
@@ -49,5 +45,9 @@ public class Dictionary
 
     return false;
 
+  }
+
+  public boolean checkWord(String wordSearch, int Start, int end){
+    return binarySearch(wordSearch,Start , end);
   }
 }
