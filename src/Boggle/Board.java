@@ -3,11 +3,11 @@ package Boggle;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Board
+class Board
 {
   private char[][] boggleBoard;
 
-  public Board(int size)
+   Board(int size)
   {
     boggleBoard = new char[size][size];
     Character[] temp = getAlphabetArray();
@@ -45,7 +45,7 @@ public class Board
 
   }
 
-  public char[][] getBoard(){
+  char[][] getBoard(){
     return this.boggleBoard;
   }
 

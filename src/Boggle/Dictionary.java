@@ -47,7 +47,11 @@ class Dictionary
 
   }
 
-  public boolean checkWord(String wordSearch, int Start, int end){
-    return binarySearch(wordSearch,Start , end);
+  boolean checkWord(String wordSearch, int Start, int end){
+    return binarySearch(wordSearch, Start, end);
+  }
+
+  String[] getDictionary(){
+    return this.Dictionary;
   }
 }
