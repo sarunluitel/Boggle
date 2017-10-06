@@ -7,13 +7,13 @@ class GameController
 {
   private ArrayList<String> TheWordList = new ArrayList<>();
   private int totalWords=0;
-  private int wordsfound=0;
+  private int wordsFound =0;
 
   void initialize()
   {
 
     Dictionary dictionary= new Dictionary();
-    Board board = new Board(10 );
+    Board board = new Board(5 );
 
 
     GetAllWords wordList = new GetAllWords(board.getBoard());
@@ -33,7 +33,7 @@ class GameController
       }
     }
 
-    while(totalWords!=wordsfound)
+    while(totalWords!= wordsFound)
     {
       playGame();
     }
@@ -48,8 +48,8 @@ class GameController
 
     if(TheWordList.contains(input))
     {
-      wordsfound++;
-      System.out.println("found "+ wordsfound +" words out of "+ totalWords );
+      wordsFound++;
+      System.out.println("found "+ wordsFound +" words out of "+ totalWords );
 
     }
     else System.out.println("not Found");

@@ -40,6 +40,8 @@ class Board
 
     Collections.shuffle(Arrays.asList(wordArray));
     Collections.shuffle(Arrays.asList(wordArray));
+    Collections.shuffle(Arrays.asList(wordArray));
+    Collections.shuffle(Arrays.asList(wordArray));
 
     return wordArray;
 
