@@ -54,11 +54,13 @@ class GameController
     }
     else System.out.println("not Found");
 
+
   }
 
   private String getInput()
   {
     System.out.println("type a word from the board or -1 to give up");
+    System.out.println("found "+ wordsFound +" words out of "+ totalWords );
     Scanner in = new Scanner(System.in);
 
     return in.next();
