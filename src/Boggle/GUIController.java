@@ -16,11 +16,12 @@ import java.io.IOException;
 public class GUIController extends Application
 {
 
-  public void renderDisplay(String[] args)
+   void renderDisplay(String[] args)
   {
     launch(args);
-    //GameController g = new GameController();
-    //g.initialize(); // uncomment to play game
+    GameController g = new GameController();
+    g.initialize(); // uncomment to play game
+
   }
 
   @Override

@@ -1,5 +1,6 @@
 package Boggle;
 
+
 class GetAllWords
 {
   //Structure to hold every word in the Dictionary and board
@@ -7,6 +8,8 @@ class GetAllWords
   private int size;
   private int currentPlace;
   private char firstChar;
+  private char secondChar;
+  private int compareChar;
 
 
   GetAllWords(char[][] board)
@@ -20,11 +23,11 @@ class GetAllWords
     boolean isWordUsed[][] = new boolean[size][size];
     currentPlace =0;
     firstChar = InputWord.charAt(0);
-    for (int i = 0; i < InputWord.length()-1; i++)
+    secondChar = InputWord.charAt(1);
+    for (compareChar = 0; compareChar < InputWord.length()-1; compareChar++)
     {
 
-
-      if(!checkNeighbour(InputWord.charAt(i),InputWord.charAt(i+1),isWordUsed))
+      if(!checkNeighbour(InputWord.charAt(compareChar),InputWord.charAt(compareChar+1),isWordUsed))
         return false;
     }
     return true;
@@ -35,6 +38,7 @@ class GetAllWords
   {
     int foundIndex=getIndex(a, currentPlace /10, currentPlace %10);
     if (foundIndex==-1) return false;
+    int firstOccurance=foundIndex;
 
     b=Character.toUpperCase(b);
     while(foundIndex!=-1)
@@ -42,6 +46,7 @@ class GetAllWords
       int y= foundIndex/10;
       int x= foundIndex%10;
       wordUsed[y][x]=true;
+
       currentPlace=foundIndex;
 
       b = Character.toUpperCase(b);
@@ -101,21 +106,27 @@ class GetAllWords
         currentPlace = (y-1)*10+(x+1);
         return true;
       }
-      //
-      foundIndex=getIndex(firstChar,currentPlace/10,currentPlace%10+1);
-      wordUsed = new boolean[size][size];// has to reset everythin.. boolean array
-      //current found location//. discarding whatever found until now and doing a fresh search on the board.
+      firstOccurance++;
+      wordUsed=new boolean[size][size];
+      compareChar=-1;
+      b=Character.toUpperCase(secondChar);
+
+      foundIndex=getIndex(firstChar,firstOccurance/10,firstOccurance%10);
+
+
     }
     return false;
   }
 
   private int getIndex(char a,int i, int j)
   {
+    a=Character.toUpperCase(a);
     for (int y= i; y < size; y++)
     {
       for (int x = j; x< size; x++)
       {
-        if(board[y][x]==Character.toUpperCase(a)) return (y*10+x);
+        if(x==size-1&& y==size-1&& board[y][x]!=a) return-1;
+        if(board[y][x]==a) return (y*10+x);
       }
     }
     return -1;
