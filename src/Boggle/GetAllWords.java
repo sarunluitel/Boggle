@@ -6,6 +6,7 @@ class GetAllWords
   private char[][] board;
   private int size;
   private int currentPlace;
+  private char firstChar;
 
 
   GetAllWords(char[][] board)
@@ -18,8 +19,10 @@ class GetAllWords
   {
     boolean isWordUsed[][] = new boolean[size][size];
     currentPlace =0;
+    firstChar = InputWord.charAt(0);
     for (int i = 0; i < InputWord.length()-1; i++)
     {
+
 
       if(!checkNeighbour(InputWord.charAt(i),InputWord.charAt(i+1),isWordUsed))
         return false;
@@ -99,7 +102,8 @@ class GetAllWords
         return true;
       }
       //
-      foundIndex=getIndex(a,currentPlace/10,currentPlace%10+1); // has to reset everythin.. boolean array
+      foundIndex=getIndex(firstChar,currentPlace/10,currentPlace%10+1);
+      wordUsed = new boolean[size][size];// has to reset everythin.. boolean array
       //current found location//. discarding whatever found until now and doing a fresh search on the board.
     }
     return false;
