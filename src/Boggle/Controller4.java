@@ -2,11 +2,15 @@ package Boggle;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class Controller4
+
+public class Controller4 implements Initializable
 {
 
   @FXML
@@ -18,8 +22,23 @@ public class Controller4
   private GridPane Grid;
 
   @FXML
-  private void iniBoard(Event event)
+  private void mouseDrag(Event event)
   {
+    Button clicked= (Button) event.getTarget();
+
+    System.out.println(clicked.getId());
+  }
+
+  @FXML
+  private void timeUp()
+  {
+
+  }
+
+  @Override
+  public void initialize(URL location, ResourceBundle resources)
+  {
+    char[][] board= ViewBoard.getBoard();
     int row, col;
 
     for (int i = 0; i < 16;  i++)
@@ -29,26 +48,7 @@ public class Controller4
       System.out.print(id);
       row= id.charAt(6)-48; //convert char to string.
       col=id.charAt(7)-48;// take away the differential in ASCII
-
-      System.out.println("      button clicked at index "+row+"  "+col);
-
-
+      b.setText(Character.toString(board[row][col]));
     }
-    //System.out.println(Grid.getChildren().get(3));
-    Button clicked= (Button) event.getSource();
-
-  }
-
-  @FXML
-  private void mouseDrag(Event event)
-  {
-    Button clicked= (Button) event.getTarget();
-    System.out.println(clicked.getId());
-  }
-
-  @FXML
-  private void timeUp()
-  {
-
   }
 }

@@ -9,11 +9,11 @@ class GameController
   private int totalWords=0;
   private int wordsFound =0;
 
-  void initialize()
-  {
 
+  void initialize(int boardSize)
+  {
     Dictionary dictionary= new Dictionary();
-    Board board = new Board(5 );
+    Board board = new Board(boardSize);
 
 
     GetAllWords wordList = new GetAllWords(board.getBoard());
@@ -29,15 +29,10 @@ class GameController
         //formed from  the board.
         this.TheWordList.add(word);
         totalWords++;
-        //System.out.println(word);
       }
     }
 
-    while(totalWords!= wordsFound)
-    {
-      playGame();
-    }
-    System.out.println("Awesome found all words");
+    ViewBoard.setBoard(board.getBoard());
 
   }
 
