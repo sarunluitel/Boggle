@@ -1,6 +1,6 @@
 package Boggle;
 
-public class ViewBoard
+class ViewBoard
 {
   private static char[][] Board;
 

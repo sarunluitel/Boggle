@@ -1,14 +1,21 @@
 package Boggle;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 class GameController
 {
   private ArrayList<String> TheWordList = new ArrayList<>();
   private int totalWords=0;
   private int wordsFound =0;
+  private int totalScore=0;
+  private static GameController instance = new GameController();
 
+  private GameController(){};
+
+  static GameController getInstance()
+  {
+    return instance;
+  }
 
   void initialize(int boardSize)
   {
@@ -27,39 +34,36 @@ class GameController
       {
         //code to add to the final list that contains. all the word that can be
         //formed from  the board.
-        this.TheWordList.add(word);
+        this.TheWordList.add(word.toUpperCase());
         totalWords++;
       }
     }
 
     ViewBoard.setBoard(board.getBoard());
 
+
   }
 
-  private void playGame()
+  boolean playGame(String input)
   {
-    String input = getInput();
-    if(input.equalsIgnoreCase("-1")) System.out.println(TheWordList.toString());
+    System.out.println("just came in  "+ input);
 
-    if(TheWordList.contains(input))
+    if(TheWordList.contains(input.toUpperCase()))
     {
       wordsFound++;
       System.out.println("found "+ wordsFound +" words out of "+ totalWords );
+      totalScore=totalWords+input.length()-2;
+      return true;
 
     }
     else System.out.println("not Found");
 
+    return false;
 
   }
-
-  private String getInput()
-  {
-    System.out.println("type a word from the board or -1 to give up");
-    System.out.println("found "+ wordsFound +" words out of "+ totalWords );
-    Scanner in = new Scanner(System.in);
-
-    return in.next();
-  }
-
+  int getTotalWords(){ return this.totalWords;}
+  int getWordsFound(){return this.wordsFound;}
+  int getTotalScore(){ return this.totalWords;}
+  ArrayList getTheLise(){return this.TheWordList;}
 
 }

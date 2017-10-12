@@ -20,16 +20,12 @@ public class GUIController extends Application
   void renderDisplay(String[] args)
   {
     launch(args);
-
-
   }
 
   @Override
   public void start(Stage primaryStage) throws Exception
   {
     welcomeScreen(primaryStage);
-
-
   }
 
   private void welcomeScreen(Stage primaryStage) throws Exception
@@ -38,7 +34,6 @@ public class GUIController extends Application
     primaryStage.setTitle("Welcome to Boggle Game");
     primaryStage.setScene(new Scene(welcomeScene, 600, 400));
     primaryStage.show();
-
   }
 
   @FXML
@@ -49,12 +44,12 @@ public class GUIController extends Application
   @FXML
   private void clicked4(Event event) throws IOException
   {
-    GameController g = new GameController();
-    g.initialize(4);
+    GameController.getInstance().initialize(4);
     Stage stage = (Stage) btn4x4.getScene().getWindow();
+
     Parent fourBy4 = FXMLLoader.load(getClass().getResource("4by4.fxml"));
     stage.setScene(new Scene(fourBy4));
-    timerBar = new ProgressBar(0);
+    timerBar = new ProgressBar(50);
     timerBar.progressProperty();//word on these to finish progressbar as timer.
   }
 
