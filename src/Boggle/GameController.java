@@ -1,5 +1,11 @@
 package Boggle;
+/*************************************************************
+ @author Sarun Luitel
 
+ Class provides methods to create a random grid and calculate
+ if a wird in in the board.
+
+ *************************************************************/
 import java.util.ArrayList;
 
 class GameController
@@ -11,6 +17,8 @@ class GameController
   private int totalScore=0;
   private static GameController instance = new GameController();
 
+
+  //Singleton design pattern. Private Constructor.
   private GameController(){};
 
   static GameController getInstance()
@@ -18,6 +26,11 @@ class GameController
     return instance;
   }
 
+
+  /*************************************************************
+   @param  boardSize gets the size of board from the GUI
+
+   *************************************************************/
   void initialize(int boardSize)
   {
     Dictionary dictionary= new Dictionary();
@@ -45,6 +58,13 @@ class GameController
 
   }
 
+  /*************************************************************
+   @param  input takes in word from the board.
+
+   Method checks if the word is in the list.
+
+   *************************************************************/
+
   boolean playGame(String input)
   {
 
@@ -56,7 +76,7 @@ class GameController
       return true;
 
     }
-    else System.out.println("not Found");
+    // command line version //else System.out.println("not Found");
 
     return false;
 

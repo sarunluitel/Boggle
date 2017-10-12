@@ -1,5 +1,11 @@
 package Boggle;
+/************************************
+ @author Sarun Luitel
 
+ takes in word dictionary and stores for
+ rest of the program to use. provices method to binary
+ search
+ ************************************/
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,9 +13,10 @@ import java.io.FileReader;
 
 class Dictionary
 {
-
+// initialize the size of array to hold the entire dictionary.
   private String[] Dictionary = new String[178696];
 
+  // constructor opens dictionary and stores in array.
   Dictionary()
   {
     try
@@ -33,7 +40,11 @@ class Dictionary
     }
   }
 
-  private boolean binarySearch(String wordSearch, int start, int end)
+/* The code uses a differnt structure where searchin is not necessary.
+unused methods commented.
+
+
+ private boolean binarySearch(String wordSearch, int start, int end)
   {
     int pivot = (start + end) / 2;
 
@@ -49,7 +60,9 @@ class Dictionary
 
   boolean checkWord(String wordSearch, int Start, int end){
     return binarySearch(wordSearch, Start, end);
-  }
+
+
+  }*/
 
   String[] getDictionary(){
     return this.Dictionary;

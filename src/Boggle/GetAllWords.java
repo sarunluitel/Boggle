@@ -1,6 +1,12 @@
 package Boggle;
 
+/************************************
+ @author Sarun Luitel
 
+ This class takes in a input and returns if the
+ word can be formed from the board.
+
+ ************************************/
 class GetAllWords
 {
   //Structure to hold every word in the Dictionary and board
@@ -17,7 +23,12 @@ class GetAllWords
     this.board = board;
     this.size=board.length;
   }
+  /*******************************************************************
+   @param  InputWord  provided by game comtroller to check if in board
 
+   @return true if word can be formed from the board.
+
+   ********************************************************************/
   boolean isWordinBoard(String InputWord)
   {
     boolean isWordUsed[][] = new boolean[size][size];
@@ -32,7 +43,15 @@ class GetAllWords
     }
     return true;
   }
+  /*******************************************************************
+   @param  a,b,wordUsed  take in characters next to each other and a
+   boolean array that sees if a character is already in use.
 
+   methods checks 8 neighbours from a char to see if words can be formed.
+
+   @return true if word can be formed from the board.
+
+   ********************************************************************/
 
   private boolean checkNeighbour(char a, char b,boolean[][] wordUsed)
   {
@@ -118,6 +137,7 @@ class GetAllWords
     return false;
   }
 
+  // helper method that loops overbaord to provide index or flags -1 if not found
   private int getIndex(char a,int i, int j)
   {
     a=Character.toUpperCase(a);

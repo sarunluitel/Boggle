@@ -1,5 +1,9 @@
 package Boggle;
-
+/*******************************************************************
+ @author Sarun Luitel
+ this class shows welcome screen and provides method to choose board and
+ start game
+ ********************************************************************/
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -16,7 +20,7 @@ import java.io.IOException;
 
 public class GUIController extends Application
 {
-
+  //javafx entry point
   void renderDisplay(String[] args)
   {
     launch(args);
@@ -27,7 +31,7 @@ public class GUIController extends Application
   {
     welcomeScreen(primaryStage);
   }
-
+  // calls welcome screen fxml and displays on the scene
   private void welcomeScreen(Stage primaryStage) throws Exception
   {
     Parent welcomeScene = FXMLLoader.load(getClass().getResource("GUIWelcome.fxml"));
@@ -40,6 +44,7 @@ public class GUIController extends Application
   private Button btn4x4, btn5x5;
 
   @FXML
+  //method runs when 4x4 is clicked
   private void clicked4() throws IOException
   {
     GameController.getInstance().initialize(4);
@@ -49,8 +54,8 @@ public class GUIController extends Application
     stage.setScene(new Scene(fourBy4));
   }
 
-
   @FXML
+  //methid runs when 5x5 is run.
   private void clicked5() throws IOException
   {
     GameController.getInstance().initialize(5);
@@ -59,6 +64,4 @@ public class GUIController extends Application
     Parent fiveBy5 = FXMLLoader.load(getClass().getResource("5by5.fxml"));
     stage.setScene(new Scene(fiveBy5));
   }
-
-
 }

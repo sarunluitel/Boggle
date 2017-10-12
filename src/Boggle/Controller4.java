@@ -1,5 +1,12 @@
 package Boggle;
 
+/************************************
+ @author Sarun Luitel
+
+ Controller that looks over the 4x4 grid
+
+ ************************************/
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -24,6 +31,7 @@ public class Controller4 implements Initializable
   private String userInput ="";
   private int minute, remsec, seconds=180;// 3 minutes
 
+  //initialize the 4x4 board.
   @Override
   public void initialize(URL location, ResourceBundle resources)
   {
@@ -41,12 +49,13 @@ public class Controller4 implements Initializable
     updateTimer();
 
   }
-
+// Links to the components in the FXML elements.
   @FXML
   private GridPane Grid;
   @FXML
   private Label lblBuffer, lblFound, lblScore;
 
+  // method run when letters are clicked.
   @FXML
   private void mouseDrag(Event event)
   {
@@ -60,6 +69,7 @@ public class Controller4 implements Initializable
   @FXML
   private ProgressBar timerBar;
   @FXML
+  // method run submit is pressed.
   private void submit()
   {
     int found=0,total=0;
@@ -104,6 +114,7 @@ public class Controller4 implements Initializable
 
   private Timeline timeline;
   @FXML
+  //update timer using the JavaFx timeline.
   private  void updateTimer()
   {
     timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {

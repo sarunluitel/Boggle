@@ -1,5 +1,12 @@
 package Boggle;
 
+/************************************
+ @author Sarun Luitel
+
+ Controller that looks over the 5x5 grid
+
+ ************************************/
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -84,6 +91,7 @@ public class Controller5 implements Initializable
     @FXML
     Button btnSubmit, btnGiveUp;
     @FXML
+    // Show possible words in the display and disable gameplay.
     private void giveUp()
     {
       hBox.setSpacing(10);
