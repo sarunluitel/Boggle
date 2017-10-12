@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="Submit" opacity="0.74" prefHeight="736.0" prefWidth="764.0" stylesheets="@DesignSheet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boggle.Controller5">
+
+
+    <Label fx:id="lblWelcome4x4" layoutX="256.0" layoutY="56.0" text="The Bigger 5x5 grid">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font></Label>
+    <HBox layoutX="171.0" layoutY="420.0" />
+    <GridPane fx:id="Grid" layoutX="95.0" layoutY="94.0" opacity="0.87" prefHeight="374.0" prefWidth="587.0" style="-fx-background-color: #009688;">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+            <Button id="Button01" fx:id="btn01" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="1">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font></Button>
+            <Button id="Button13" fx:id="btn13" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button10" fx:id="btn10" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.rowIndex="1">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button11" fx:id="btn11" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button02" fx:id="btn02" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="2">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button03" fx:id="btn03" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="3">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button12" fx:id="btn12" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button20" fx:id="btn20" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.rowIndex="2">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button21" fx:id="btn21" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button22" fx:id="btn22" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button23" fx:id="btn23" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button30" fx:id="btn30" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.rowIndex="3">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button31" fx:id="btn31" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button32" fx:id="btn32" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button33" fx:id="btn33" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+            <Button id="Button00" fx:id="btn00" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+            </Button>
+         <Button id="Button40" fx:id="btn331" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.rowIndex="4">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+         <Button id="Button41" fx:id="btn332" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+         <Button id="Button42" fx:id="btn333" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+         <Button id="Button43" fx:id="btn334" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+         <Button id="Button04" fx:id="btn335" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="4">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+         <Button id="Button14" fx:id="btn336" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+         <Button id="Button24" fx:id="btn337" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+         <Button id="Button34" fx:id="btn338" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="4" GridPane.rowIndex="3">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+         <Button id="Button44" fx:id="btn339" onAction="#mouseDrag" prefHeight="60.0" prefWidth="104.0" styleClass="Button" stylesheets="@DesignSheet.css" text="A" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Button>
+
+        </children>
+    </GridPane>
+    <ProgressBar fx:id="timerBar" layoutX="95.0" layoutY="582.0" prefHeight="20.0" prefWidth="587.0" progress="0.0" />
+    <Button id="btnSubmit" fx:id="btnSubmit" defaultButton="true" layoutX="121.0" layoutY="616.0" mnemonicParsing="false" onAction="#submit" styleClass="Button" stylesheets="@DesignSheet.css" text="Submit word">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Button>
+    <ScrollPane fx:id="scrollPane" layoutX="102.0" layoutY="372.0" prefHeight="51.0" prefWidth="528.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="170.0" AnchorPane.rightAnchor="112.0">
+        <content>
+            <HBox fx:id="hBox">
+                <children>
+
+                </children></HBox>
+        </content>
+    </ScrollPane>
+    <Label fx:id="lblBuffer" layoutX="198.0" layoutY="486.0" text="Select word and submit. Fill up the progress bar">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+    </Label>
+    <Label fx:id="lblFound" layoutX="607.0" layoutY="24.0" text="found: 0/Total">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+    </Label>
+    <Label fx:id="lblTimer" layoutX="53.0" layoutY="24.0" onDragDetected="#updateTimer" text="Time">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+    </Label>
+    <Button id="btnGiveUp" fx:id="btnGiveUp" cancelButton="true" layoutX="506.0" layoutY="616.0" mnemonicParsing="false" onAction="#giveUp" styleClass="Button" stylesheets="@DesignSheet.css" text="Give up">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Button>
+    <Label fx:id="lblScore" layoutX="436.0" layoutY="24.0" text="Score: 0">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+    </Label>
+
+</AnchorPane>

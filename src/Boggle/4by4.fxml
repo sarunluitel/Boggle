@@ -134,7 +134,7 @@
          <Font name="System Bold" size="15.0" />
       </font>
    </Label>
-   <Label fx:id="lblFound" layoutX="369.0" layoutY="14.0" text="found: 0/Total">
+   <Label fx:id="lblFound" layoutX="410.0" layoutY="14.0" text="found: 0/Total">
       <font>
          <Font name="System Bold" size="15.0" />
       </font>
@@ -149,7 +149,7 @@
          <Font name="System Bold" size="18.0" />
       </font>
    </Button>
-   <Label fx:id="lblScore" layoutX="248.0" layoutY="14.0" text="Score: 0">
+   <Label fx:id="lblScore" layoutX="263.0" layoutY="14.0" text="Score: 0">
       <font>
          <Font name="System Bold" size="15.0" />
       </font>

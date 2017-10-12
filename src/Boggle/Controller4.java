@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 public class Controller4 implements Initializable
 {
   private String userInput ="";
+  private int minute, remsec, seconds=180;// 3 minutes
 
   @Override
   public void initialize(URL location, ResourceBundle resources)
@@ -62,16 +63,14 @@ public class Controller4 implements Initializable
   private void submit()
   {
     int found=0,total=0;
+    Label label=new Label(userInput);
     if(!GameController.getInstance().playGame(userInput))
     {
-      Label label=new Label(userInput);
       label.setTextFill(Color.RED);
       //label.setFont(Font.font(17));
-      hBox.setSpacing(10);
-      hBox.getChildren().add(label);
-
     }
-
+    hBox.setSpacing(10);
+    hBox.getChildren().add(label);
     total =GameController.getInstance().getTotalWords();
     found =GameController.getInstance().getWordsFound();
     double ratio=(1.00*found)/(1.00*total);
@@ -81,7 +80,7 @@ public class Controller4 implements Initializable
 
     userInput="";
 
-    lblFound.setText("found "+found+" of "+total +" words." );
+    lblFound.setText("found "+found+" / "+total );
   }
   @FXML
   Button btnSubmit, btnGiveUp;
@@ -96,36 +95,35 @@ public class Controller4 implements Initializable
       hBox.getChildren().add(new Label((String)a) );
     }
     btnSubmit.setDisable(true);
+    timeline.stop();
+    btnGiveUp.setDisable(true);
   }
 
   @FXML
   private  Label lblTimer;
-  private int minute, remsec, seconds=10;
+
   private Timeline timeline;
   @FXML
   private  void updateTimer()
   {
-     timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
-
-
+    timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
       seconds--;
       minute =seconds/60;
-
       remsec=seconds%60;
 
 
       System.out.println("aa"+minute +"  "+ seconds);
-    lblTimer.setText("Time is: "+minute+"and "+remsec+"Seconds;");
+      lblTimer.setText("Time remain: "+minute+": "+remsec);
 
-    if(seconds==0){
-      btnSubmit.setDisable(true);
-      giveUp();
-      btnGiveUp.setDisable(true);
-      timeline.stop();
-    }
+      if(seconds==0){
+        btnSubmit.setDisable(true);
+        giveUp();
+        btnGiveUp.setDisable(true);
+        timeline.stop();
+      }
     }));
     timeline.setCycleCount(Animation.INDEFINITE);
     timeline.play();
-    }
+  }
 
 }

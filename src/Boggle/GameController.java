@@ -5,6 +5,7 @@ import java.util.ArrayList;
 class GameController
 {
   private ArrayList<String> TheWordList = new ArrayList<>();
+  private ArrayList<String> wordsPlayed = new ArrayList<>();
   private int totalWords=0;
   private int wordsFound =0;
   private int totalScore=0;
@@ -46,12 +47,11 @@ class GameController
 
   boolean playGame(String input)
   {
-    System.out.println("just came in  "+ input);
 
-    if(TheWordList.contains(input.toUpperCase()))
+    if(TheWordList.contains(input.toUpperCase())&& !wordsPlayed.contains(input.toUpperCase()))
     {
       wordsFound++;
-      System.out.println("found "+ wordsFound +" words out of "+ totalWords );
+      wordsPlayed.add(input);
       totalScore=totalScore+input.length()-2;
       return true;
 
