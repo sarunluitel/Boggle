@@ -14,7 +14,7 @@
 <AnchorPane id="Submit" opacity="0.74" prefHeight="583.0" prefWidth="600.0" stylesheets="@DesignSheet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boggle.Controller4">
 
 
-   <Label fx:id="lblWelcome4x4" layoutX="229.0" layoutY="49.0" text="The 4x4 grid">
+   <Label fx:id="lblWelcome4x4" layoutX="227.0" layoutY="69.0" text="The 4x4 grid">
       <font>
          <Font name="System Bold" size="20.0" />
       </font></Label>
@@ -116,7 +116,7 @@
       </children>
    </GridPane>
    <ProgressBar fx:id="timerBar" layoutX="72.0" layoutY="458.0" prefHeight="18.0" prefWidth="452.0" progress="0.0" />
-   <Button id="btnSubmit" fx:id="btnSubmit" defaultButton="true" layoutX="94.0" layoutY="511.0" mnemonicParsing="false" onAction="#submit" styleClass="Button" stylesheets="@DesignSheet.css" text="Submit word">
+   <Button id="btnSubmit" fx:id="btnSubmit" defaultButton="true" layoutX="106.0" layoutY="495.0" mnemonicParsing="false" onAction="#submit" styleClass="Button" stylesheets="@DesignSheet.css" text="Submit word">
       <font>
          <Font name="System Bold" size="18.0" />
       </font>
@@ -134,20 +134,25 @@
          <Font name="System Bold" size="15.0" />
       </font>
    </Label>
-   <Label fx:id="lblFound" layoutX="378.0" layoutY="14.0" text="found a/B">
+   <Label fx:id="lblFound" layoutX="369.0" layoutY="14.0" text="found: 0/Total">
       <font>
          <Font name="System Bold" size="15.0" />
       </font>
    </Label>
-   <Label fx:id="lblTimer" layoutX="14.0" layoutY="23.0" text="Time">
+   <Label fx:id="lblTimer" layoutX="30.0" layoutY="14.0" onDragDetected="#updateTimer" text="Time">
       <font>
          <Font name="System Bold" size="15.0" />
       </font>
    </Label>
-   <Button id="btnGiveUp" fx:id="GiveUp" cancelButton="true" layoutX="342.0" layoutY="511.0" mnemonicParsing="false" onAction="#giveUp" styleClass="Button" stylesheets="@DesignSheet.css" text="Give up">
+   <Button id="btnGiveUp" fx:id="btnGiveUp" cancelButton="true" layoutX="369.0" layoutY="495.0" mnemonicParsing="false" onAction="#giveUp" styleClass="Button" stylesheets="@DesignSheet.css" text="Give up">
       <font>
          <Font name="System Bold" size="18.0" />
       </font>
    </Button>
+   <Label fx:id="lblScore" layoutX="248.0" layoutY="14.0" text="Score: 0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+   </Label>
 
 </AnchorPane>

@@ -1,5 +1,8 @@
 package Boggle;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,6 +12,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,8 +22,6 @@ import java.util.ResourceBundle;
 public class Controller4 implements Initializable
 {
   private String userInput ="";
-  private GameController g;
-
 
   @Override
   public void initialize(URL location, ResourceBundle resources)
@@ -35,12 +37,14 @@ public class Controller4 implements Initializable
       col=id.charAt(7)-48;// take away the differential in ASCII
       b.setText(Character.toString(board[row][col]));
     }
+    updateTimer();
+
   }
 
   @FXML
   private GridPane Grid;
   @FXML
-  private Label lblTimer, lblBuffer, lblFound;
+  private Label lblBuffer, lblFound, lblScore;
 
   @FXML
   private void mouseDrag(Event event)
@@ -67,20 +71,20 @@ public class Controller4 implements Initializable
       hBox.getChildren().add(label);
 
     }
-    else
-      {
-        total =GameController.getInstance().getTotalWords();
-        found =GameController.getInstance().getWordsFound();
-        double ratio=(1.00*found)/(1.00*total);
-        System.out.println(ratio);
-        timerBar.setProgress(ratio);
-      }
+
+    total =GameController.getInstance().getTotalWords();
+    found =GameController.getInstance().getWordsFound();
+    double ratio=(1.00*found)/(1.00*total);
+    System.out.println(ratio);
+    timerBar.setProgress(ratio);
+    lblScore.setText("Score: "+ GameController.getInstance().getScore());
+
     userInput="";
 
     lblFound.setText("found "+found+" of "+total +" words." );
   }
-@FXML
-Button btnSubmit;
+  @FXML
+  Button btnSubmit, btnGiveUp;
   @FXML
   private void giveUp()
   {
@@ -94,5 +98,34 @@ Button btnSubmit;
     btnSubmit.setDisable(true);
   }
 
+  @FXML
+  private  Label lblTimer;
+  private int minute, remsec, seconds=10;
+  private Timeline timeline;
+  @FXML
+  private  void updateTimer()
+  {
+     timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+
+
+      seconds--;
+      minute =seconds/60;
+
+      remsec=seconds%60;
+
+
+      System.out.println("aa"+minute +"  "+ seconds);
+    lblTimer.setText("Time is: "+minute+"and "+remsec+"Seconds;");
+
+    if(seconds==0){
+      btnSubmit.setDisable(true);
+      giveUp();
+      btnGiveUp.setDisable(true);
+      timeline.stop();
+    }
+    }));
+    timeline.setCycleCount(Animation.INDEFINITE);
+    timeline.play();
+    }
 
 }

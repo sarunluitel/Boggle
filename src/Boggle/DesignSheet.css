@@ -1,7 +1,7 @@
 .Button
 {
     -fx-background-color: #FFFFFF;
-    -fx-background-radius: 40;
+    -fx-background-radius: 35;
     -fx-text-alignment: "CENTER";
 }
 .Button:hover

@@ -52,7 +52,7 @@ class GameController
     {
       wordsFound++;
       System.out.println("found "+ wordsFound +" words out of "+ totalWords );
-      totalScore=totalWords+input.length()-2;
+      totalScore=totalScore+input.length()-2;
       return true;
 
     }
@@ -63,7 +63,7 @@ class GameController
   }
   int getTotalWords(){ return this.totalWords;}
   int getWordsFound(){return this.wordsFound;}
-  int getTotalScore(){ return this.totalWords;}
+  int getScore(){ return this.totalScore;}
   ArrayList getTheLise(){return this.TheWordList;}
 
 }
