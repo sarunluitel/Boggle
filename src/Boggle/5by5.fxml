@@ -14,7 +14,7 @@
 <AnchorPane id="Submit" opacity="0.74" prefHeight="736.0" prefWidth="764.0" stylesheets="@DesignSheet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boggle.Controller5">
 
 
-    <Label fx:id="lblWelcome4x4" layoutX="256.0" layoutY="56.0" text="The Bigger 5x5 grid">
+    <Label fx:id="lblWelcome5x5" layoutX="256.0" layoutY="56.0" text="The Bigger 5x5 grid">
         <font>
             <Font name="System Bold" size="20.0" />
         </font></Label>
