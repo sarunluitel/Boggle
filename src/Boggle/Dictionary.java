@@ -6,9 +6,7 @@ package Boggle;
  rest of the program to use. provices method to binary
  search
  ************************************/
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 
 
 class Dictionary
@@ -21,8 +19,12 @@ class Dictionary
   {
     try
     {
-      File file = new File("src/res/OpenEnglishWordList.txt");
-      BufferedReader buffer = new BufferedReader(new FileReader(file));
+
+      InputStream is = ClassLoader.getSystemResourceAsStream("res/OpenEnglishWordList.txt");
+      InputStreamReader r = new InputStreamReader(is);
+
+    //  File file = new File();
+      BufferedReader buffer = new BufferedReader(r);
 
       String thisLine;
       int i = 0;
